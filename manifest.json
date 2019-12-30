@@ -1,0 +1,23 @@
+{
+    "name": "Twitch Chat Visualizer",
+    "version": "0.0.0.1",
+    "description": "See Twitch chat in a whole new light!",
+    "permissions": [
+        "tabs"
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.twitch.tv/*"],
+            "js": ["script.js"]
+        }
+    ],
+    "browser_action": {},
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://d3js.org; object-src 'self'"
+}
